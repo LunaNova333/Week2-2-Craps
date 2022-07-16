@@ -5,10 +5,17 @@ Samantha Callison
 samcalli@uat.edu-->
 <html>  
 
-    <head>
-        <title>
+<head>
+    <script src="Code.js"></script>
+    <title>
             Samantha Callison's UAT Space Page
         </title>
+        <style>
+            body{
+                background-color:rebeccapurple;
+                color: rgb(114, 160, 245);
+            }
+        </style>
     </head>
 
      <body>
@@ -17,8 +24,6 @@ samcalli@uat.edu-->
         UAT Space Program
     </h1>
     <script>
-        //required alert function test
-        alert("This is a test of the alert function");
         //Test of use of document.write
         document.write("This is a test of the document.write function");
     </script>
@@ -26,7 +31,12 @@ samcalli@uat.edu-->
         UAT Space is splendid. I advise you join if you are a space explorer,
         or you have the urge to delve deeper into the unknown.
     </p>
-    <button>Start</button>
+    <!--Countdown timer title-->
+    <h2>Countdown Timer</h2>
+    <!--Status of current countdown timer-->
+    <div id="countdownStatus">Timer Status</div><br>
+    <br>
+    <button onclick="start();">Start</button>
     <button>Stop</button>
 
      </body>       
