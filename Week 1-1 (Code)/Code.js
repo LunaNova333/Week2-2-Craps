@@ -76,3 +76,34 @@ function start(){
         console.log(currTime);
     }, 10000)
 }
+
+function playCraps(){
+console.log("playCraps() started");
+    //generate variables: die1, die2, sum
+    var die1
+    var die2
+    var die3
+
+    //roll the dice
+    die1= Math.floor(Math.random() * 6) + 1;
+    console.log(die1); 
+    die2= Math.floor(Math.random() * 6) + 1;
+    console.log(die2);  
+    die3= Math.floor(Math.random() * 6) + 1;
+    console.log(die3); 
+
+    //determine the sum of the two dice and save it in the sum
+    sum=die1 + die2;
+    console.log("sum is equal to" + sum);
+
+    //follow the rules of Craps
+    //first lose
+    if(sum == 7 || sum == 11){
+        document.getElementById("crapStatus").innerHTML = "Craps!! You lose!"
+    } else if(die1 == die2 && die1%2 == 0){
+        document.getElementById("crapStatus").innerHTML = "Huzzah! You Win!!."
+    } else {
+        document.getElementById("crapStatus").innerHTML = "You did not lose."
+    }
+
+}
