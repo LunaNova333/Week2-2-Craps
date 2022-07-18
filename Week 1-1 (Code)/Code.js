@@ -1,6 +1,6 @@
 //function for countdownTimer V1 for week1-2
-function start(){
-    console.log("start() function started");
+function blastoffTimerV1(){
+    console.log("blastoffTimerV1() function started");
     //created variable currTime set it equal to 10
     var currTime = 10;
     console.log(currTime);
@@ -103,4 +103,23 @@ function playCraps(){
         document.getElementById("crapsStatus").innerHTML = "You did not lose."
     }
 
+}
+
+function blastoffTimerV2(){
+    console.log("blastoffTimerV2() started");
+    //want a loop that runs 11 times, 10-1 and then blastoff
+    var countdownTimer = 1000;
+    var stepTime = 10;
+
+    for(var i = 0; i < countdownTimer; i = i +1){
+        setTimeout(function(){
+            console.log(countdownTimer);
+            document.getElementById("countdownStatus").innerHTML = countdownTimer;
+            countdownTimer = countdownTimer - 1;
+        }, stepTime * i)
+    }
+    setTimeout(function(){
+        console.log(countdownTimer);
+        document.getElementById("countdownStatus").innerHTML = "Blastoff!!!";
+    }, stepTime * countdownTimer)
 }

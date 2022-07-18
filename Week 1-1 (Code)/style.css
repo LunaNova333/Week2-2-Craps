@@ -4,18 +4,10 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
-#paraFunc{
-    color:  black;
-    
-}
-
 #paraFunc2{
-    color: red;
-    text-decoration: underline;
+    color: black;
 }
 
 #countdownStatus{
     color: red;
-    font-style: oblique;
-    font-size: 150%;
 }
