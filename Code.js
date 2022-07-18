@@ -1,6 +1,6 @@
 //function for countdownTimer V1 for week1-2
-function start(){
-    console.log("start() function started");
+function blastoffTimerV1(){
+    console.log("blastoffTimerV1() function started");
     //created variable currTime set it equal to 10
     var currTime = 10;
     console.log(currTime);
@@ -75,4 +75,51 @@ function start(){
         document.getElementById("countdownStatus").innerHTML = "Blastoff!!!";
         console.log(currTime);
     }, 10000)
+}
+
+function playCraps(){
+    console.log("playCraps() started");
+    //generate variables: die1, die2, sum
+    var die1;
+    var die2;
+    var sum;
+
+    //roll the dice
+    die1 = Math.floor(Math.random() * 6) + 1;
+    console.log(die1); 
+    die2 = Math.floor(Math.random() * 6) + 1;
+    console.log(die2);  
+    //determine the sum of the two dice and save it in sum
+    sum = die1 + die2;
+    console.log("sum is equal to" + sum); 
+
+    //follow the rules of Craps
+    //first lose
+    if(sum == 7 || sum == 11){
+        document.getElementById("crapsStatus").innerHTML = "Craps!! You lose!"
+    } else if(die1 == die2 && die1%2 == 0){
+        document.getElementById("crapsStatus").innerHTML = "Huzzah! You Win!!."
+    } else {
+        document.getElementById("crapsStatus").innerHTML = "You did not lose."
+    }
+
+}
+
+function blastoffTimerV2(){
+    console.log("blastoffTimerV2() started");
+    //want a loop that runs 11 times, 10-1 and then blastoff
+    var countdownTimer = 1000;
+    var stepTime = 10;
+
+    for(var i = 0; i < countdownTimer; i = i +1){
+        setTimeout(function(){
+            console.log(countdownTimer);
+            document.getElementById("countdownStatus").innerHTML = countdownTimer;
+            countdownTimer = countdownTimer - 1;
+        }, stepTime * i)
+    }
+    setTimeout(function(){
+        console.log(countdownTimer);
+        document.getElementById("countdownStatus").innerHTML = "Blastoff!!!";
+    }, stepTime * countdownTimer)
 }
